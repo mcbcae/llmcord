@@ -1,4 +1,5 @@
 import asyncio
+from keep_alive import keep_alive
 from base64 import b64encode
 from dataclasses import dataclass, field
 from datetime import datetime
@@ -340,6 +341,7 @@ async def main() -> None:
 
 
 try:
+    keep_alive()
     asyncio.run(main())
 except KeyboardInterrupt:
     pass
